@@ -10,6 +10,9 @@ import SidePanel from "./pages/dashboard/SidePanel";
 import MainStats from "./pages/dashboard/MainStats";
 import DashboardNav from "./pages/dashboard/DashboardNav";
 import MainDashboard from "./pages/dashboard/MainDashboard";
+import VACDashboard from "./pages/adminPanel/VACDashboard";
+import AdminDashboard from "./pages/adminPanel/AdminDashboard";
+import ConfirmTransaction from "./pages/adminPanel/ConfirmTransaction";
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
         <Route path="/mainstat" element={<MainStats />} />
         <Route path="/dashboardnav" element={<DashboardNav />} />
         <Route path="/maindashboard" element={<MainDashboard />} />
+        <Route path="/vacdashboard" element={<VACDashboard />} />
+        <Route path="/admindashboard" element={<AdminDashboard />} />
+        <Route path="/confirmtransaction" element={<ConfirmTransaction />} />
       </Routes>
     </BrowserRouter>
   );

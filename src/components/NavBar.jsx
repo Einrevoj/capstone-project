@@ -60,7 +60,9 @@ export default function NavBar() {
             <li className="hover:text-secondary">MEMBERSHIP</li>
           </Link>
           <li className="hover:text-secondary">INVESTMENT</li>
-          <li className="hover:text-secondary">LOANS</li>
+          <Link to="admindashboard">
+            <li className="hover:text-secondary">ADMIN</li>
+          </Link>
           <li className="hover:text-secondary">FORMS</li>
         </ul>
       </div>
