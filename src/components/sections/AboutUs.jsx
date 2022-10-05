@@ -67,13 +67,13 @@ export default function AboutUs() {
             onEnter={() => setCounterOn(true)}
             onExit={() => setCounterOn(false)}
           >
-            <h1 className="text-white text-3xl">
+            <h1 className="text-white text-4xl">
               {counterOn && (
-                <CountUp start={0} end={1287} duration={2} delay={0} />
+                <CountUp start={0} end={15324} duration={2} delay={0} />
               )}
               <span id="count1"></span>+
             </h1>
-            <p className="text-white">New Members</p>
+            <p className="text-white">Total Members</p>
           </ScrollTrigger>
         </div>
         <div className="text-center">
@@ -81,13 +81,13 @@ export default function AboutUs() {
             onEnter={() => setCounterOn(true)}
             onExit={() => setCounterOn(false)}
           >
-            <h1 className="text-white text-3xl">
+            <h1 className="text-white text-4xl">
               {counterOn && (
-                <CountUp start={0} end={5786} duration={2} delay={0} />
+                <CountUp start={0} end={14224} duration={2} delay={0} />
               )}
               <span id="count2"></span>+
             </h1>
-            <p className="text-white">Active Members</p>
+            <p className="text-white">Total Active Members</p>
           </ScrollTrigger>
         </div>
         <div className="text-center ">
@@ -95,13 +95,13 @@ export default function AboutUs() {
             onEnter={() => setCounterOn(true)}
             onExit={() => setCounterOn(false)}
           >
-            <h1 className="text-white text-3xl">
+            <h1 className="text-white text-4xl">
               {counterOn && (
-                <CountUp start={0} end={1440} duration={2} delay={0} />
+                <CountUp start={0} end={1100} duration={2} delay={0} />
               )}
               <span id="count3"></span>+
             </h1>
-            <p className="text-white">Loan Processed</p>
+            <p className="text-white text-lg">Total Inactive Members</p>
           </ScrollTrigger>
         </div>
       </div>

@@ -2,9 +2,15 @@ import React from "react";
 import logoImg from "../images/logo-white-orange.png";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
+import * as actionUser from "../redux/actionUser";
+import { useSelector } from "react-redux";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase";
 // import OpenNavbarMobile from "./utilities/OpenNavbarMobile";
 
 export default function NavBar() {
+  const activeUser = useSelector((state) => state.activeUser);
+  const [user] = useAuthState(auth);
   return (
     // Opened Menu Navbar - Mobile View
     // <OpenNavbarMobile />
@@ -49,22 +55,39 @@ export default function NavBar() {
       </div>
       {/* end upper nav */}
       <div className="hidden bg-primary w-full md:flex flex-row justify-between border-t-2 border-secondary pt-3 pb-3">
-        <ul className="flex flex-row items-center justify-around w-full h-full font-sans font-semibold text-white text-lg tracking-wider">
-          <Link to="/">
-            <li className="hover:text-secondary">HOME</li>
-          </Link>
-          <a href="#about">
-            <li className="hover:text-secondary">ABOUT US</li>
-          </a>
-          <Link to="/maindashboard">
-            <li className="hover:text-secondary">MEMBERSHIP</li>
-          </Link>
-          <li className="hover:text-secondary">INVESTMENT</li>
-          <Link to="admindashboard">
-            <li className="hover:text-secondary">ADMIN</li>
-          </Link>
-          <li className="hover:text-secondary">FORMS</li>
-        </ul>
+        {user || activeUser.email ? (
+          <>
+            <ul className="flex flex-row items-center justify-around w-full h-full font-sans font-semibold text-white text-lg tracking-wider">
+              <Link to="/">
+                <li className="hover:text-secondary">HOME</li>
+              </Link>
+              <a href="#about">
+                <li className="hover:text-secondary">ABOUT US</li>
+              </a>
+              <Link to="/maindashboard">
+                <li className="hover:text-secondary">MEMBERSHIP</li>
+              </Link>
+              <li className="hover:text-secondary">INVESTMENT</li>
+              <Link to="admindashboard">
+                <li className="hover:text-secondary">ADMIN</li>
+              </Link>
+              <li className="hover:text-secondary">FORMS</li>
+            </ul>
+          </>
+        ) : (
+          <ul className="flex flex-row items-center justify-around w-full h-full font-sans font-semibold text-white text-lg tracking-wider">
+            <Link to="/">
+              <li className="hover:text-secondary">HOME</li>
+            </Link>
+            <a href="#about">
+              <li className="hover:text-secondary">ABOUT US</li>
+            </a>
+
+            <li className="hover:text-secondary">INVESTMENT</li>
+
+            <li className="hover:text-secondary">FORMS</li>
+          </ul>
+        )}
       </div>
     </div>
   );
