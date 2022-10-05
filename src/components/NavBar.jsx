@@ -71,7 +71,14 @@ export default function NavBar() {
               <Link to="admindashboard">
                 <li className="hover:text-secondary">ADMIN</li>
               </Link>
-              <li className="hover:text-secondary">FORMS</li>
+              <a
+                href={
+                  "https://drive.google.com/file/d/10qKwnSTdabrrN5bv46NSYde0ueQY9eLj/view?usp=sharing"
+                }
+                target="_blank"
+              >
+                <li className="hover:text-secondary">FORMS</li>
+              </a>
             </ul>
           </>
         ) : (
@@ -85,7 +92,14 @@ export default function NavBar() {
 
             <li className="hover:text-secondary">INVESTMENT</li>
 
-            <li className="hover:text-secondary">FORMS</li>
+            <a
+              href={
+                "https://drive.google.com/file/d/10qKwnSTdabrrN5bv46NSYde0ueQY9eLj/view?usp=sharing"
+              }
+              target="_blank"
+            >
+              <li className="hover:text-secondary">FORMS</li>
+            </a>
           </ul>
         )}
       </div>
