@@ -7,9 +7,7 @@ export default function CTransaction() {
       <div className="overflow-x-auto">
         <div className="relative flex flex-wrap items-center justify-between px-2 py-3">
           <div className="relative">
-            <h3 className="font-bold text-blue-900 text-2xl">
-              VAC Wallet Transactions
-            </h3>
+            <h3 className="font-bold text-blue-900 text-2xl">Transactions</h3>
           </div>
 
           <div className="flex flex-col lg:flex-row list-none lg:ml-auto">
@@ -27,8 +25,8 @@ export default function CTransaction() {
                 placeholder="2022"
               />
 
-              <button className="relative z-0 inline-flex text-sm rounded-md shadow-sm focus:ring-accent-500 focus:border-accent-500 bg-blue-900 hover:bg-blue-500 focus:z-10 focus:outline-none focus:ring-1">
-                <span className="relative inline-flex items-center px-3 py-3 space-x-2 text-sm font-medium text-white bg-blue-900 border border-blue-900 rounded-md sm:py-2">
+              <button className="relative z-0 inline-flex text-lg rounded-md shadow-sm focus:ring-accent-500 focus:border-accent-500 bg-blue-900 hover:bg-blue-500 focus:z-10 focus:outline-none focus:ring-1">
+                <span className="relative inline-flex items-center px-3 py-3 space-x-2 text-lg font-medium text-white bg-blue-900 border border-blue-900 rounded-md sm:py-2">
                   <div className="hidden sm:block">View Transactions</div>
                 </span>
               </button>
@@ -76,142 +74,170 @@ export default function CTransaction() {
               </thead>
               <tbody className="divide-y divide-gray-200 border border-blue-900">
                 <tr>
-                  <td className="px-6 py-4 text-sm font-medium text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg font-medium text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     10/01/2022 8:27PM
                   </td>
-                  <td className="px-6 py-4 text-sm  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     C0000054345656
                   </td>
-                  <td className="px-6 py-4 text-sm  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     Cash Out
                   </td>
-                  <td className="px-6 py-4 text-sm font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     23,000.00
                   </td>
-                  <td className="flex-wrap px-6 py-4 text-sm font-medium  text-blue-900  whitespace-nowrap border border-blue-900">
+                  <td className="flex-wrap px-6 py-4 text-lg font-medium  text-blue-900  whitespace-nowrap border border-blue-900">
                     <div className="flex items-center justify-center">
-                      <Icon icon="fa:eye" />
-                      View
+                      <Icon icon="fa:eye" className="text-2xl pr-3" />
+                      <Icon icon="fa:edit" className="text-2xl pr-3" />
+                      <Icon
+                        icon="material-symbols:delete-forever"
+                        className="text-3xl pr-3"
+                      />
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-6 py-4 text-sm font-medium text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg font-medium text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     10/01/2022 8:27PM
                   </td>
-                  <td className="px-6 py-4 text-sm  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     RI0000234567
                   </td>
-                  <td className="px-6 py-4 text-sm  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     Report Income
                   </td>
-                  <td className="px-6 py-4 text-sm font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     300,000.00
                   </td>
-                  <td className="flex-wrap flex-col px-6 py-4 text-sm font-medium  text-blue-900  whitespace-nowrap border border-blue-900">
+                  <td className="flex-wrap flex-col px-6 py-4 text-lg font-medium  text-blue-900  whitespace-nowrap border border-blue-900">
                     <div className="flex items-center justify-center">
-                      <Icon icon="fa:eye" />
-                      View
+                      <Icon icon="fa:eye" className="text-2xl pr-3" />
+                      <Icon icon="fa:edit" className="text-2xl pr-3" />
+                      <Icon
+                        icon="material-symbols:delete-forever"
+                        className="text-3xl pr-3"
+                      />
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-6 py-4 text-sm font-medium text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg font-medium text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     10/01/2022 8:27PM
                   </td>
-                  <td className="px-6 py-4 text-sm  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     NM02342313213
                   </td>
-                  <td className="px-6 py-4 text-sm  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     New member
                   </td>
-                  <td className="px-6 py-4 text-sm font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     5,000.00
                   </td>
-                  <td className="flex-wrap flex-col px-6 py-4 text-sm font-medium  text-blue-900  whitespace-nowrap border border-blue-900">
+                  <td className="flex-wrap flex-col px-6 py-4 text-lg font-medium  text-blue-900  whitespace-nowrap border border-blue-900">
                     <div className="flex items-center justify-center">
-                      <Icon icon="fa:eye" />
-                      View
+                      <Icon icon="fa:eye" className="text-2xl pr-3" />
+                      <Icon icon="fa:edit" className="text-2xl pr-3" />
+                      <Icon
+                        icon="material-symbols:delete-forever"
+                        className="text-3xl pr-3"
+                      />
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-6 py-4 text-sm font-medium text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg font-medium text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     10/01/2022 8:27PM
                   </td>
-                  <td className="px-6 py-4 text-sm  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     VE0000234567
                   </td>
-                  <td className="px-6 py-4 text-sm  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     VAC Expense
                   </td>
-                  <td className="px-6 py-4 text-sm font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     -13,000.00
                   </td>
-                  <td className="flex-wrap flex-col px-6 py-4 text-sm font-medium  text-blue-900  whitespace-nowrap border border-blue-900">
+                  <td className="flex-wrap flex-col px-6 py-4 text-lg font-medium  text-blue-900  whitespace-nowrap border border-blue-900">
                     <div className="flex items-center justify-center">
-                      <Icon icon="fa:eye" />
-                      View
+                      <Icon icon="fa:eye" className="text-2xl pr-3" />
+                      <Icon icon="fa:edit" className="text-2xl pr-3" />
+                      <Icon
+                        icon="material-symbols:delete-forever"
+                        className="text-3xl pr-3"
+                      />
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-6 py-4 text-sm font-medium text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg font-medium text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     10/01/2022 8:27PM
                   </td>
-                  <td className="px-6 py-4 text-sm  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     CI0000234567
                   </td>
-                  <td className="px-6 py-4 text-sm  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     Cash In
                   </td>
-                  <td className="px-6 py-4 text-sm font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     1,400.00
                   </td>
-                  <td className="flex-wrap flex-col px-6 py-4 text-sm font-medium  text-blue-900  whitespace-nowrap border border-blue-900">
+                  <td className="flex-wrap flex-col px-6 py-4 text-lg font-medium  text-blue-900  whitespace-nowrap border border-blue-900">
                     <div className="flex items-center justify-center">
-                      <Icon icon="fa:eye" />
-                      View
+                      <Icon icon="fa:eye" className="text-2xl pr-3" />
+                      <Icon icon="fa:edit" className="text-2xl pr-3" />
+                      <Icon
+                        icon="material-symbols:delete-forever"
+                        className="text-3xl pr-3"
+                      />
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-6 py-4 text-sm font-medium text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg font-medium text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     10/01/2022 8:27PM
                   </td>
-                  <td className="px-6 py-4 text-sm  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     CI00002345776
                   </td>
-                  <td className="px-6 py-4 text-sm  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     Cash In
                   </td>
-                  <td className="px-6 py-4 text-sm font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     1,400.00
                   </td>
-                  <td className="flex-wrap flex-col px-6 py-4 text-sm font-medium  text-blue-900  whitespace-nowrap border border-blue-900">
+                  <td className="flex-wrap flex-col px-6 py-4 text-lg font-medium  text-blue-900  whitespace-nowrap border border-blue-900">
                     <div className="flex items-center justify-center">
-                      <Icon icon="fa:eye" />
-                      View
+                      <Icon icon="fa:eye" className="text-2xl pr-3" />
+                      <Icon icon="fa:edit" className="text-2xl pr-3" />
+                      <Icon
+                        icon="material-symbols:delete-forever"
+                        className="text-3xl pr-3"
+                      />
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-6 py-4 text-sm font-medium text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg font-medium text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     10/01/2022 8:27PM
                   </td>
-                  <td className="px-6 py-4 text-sm  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     CI0000234798
                   </td>
-                  <td className="px-6 py-4 text-sm  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     Cash In
                   </td>
-                  <td className="px-6 py-4 text-sm font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  <td className="px-6 py-4 text-lg font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
                     1,400.00
                   </td>
-                  <td className="flex-wrap flex-col px-6 py-4 text-sm font-medium  text-blue-900  whitespace-nowrap border border-blue-900">
+                  <td className="flex-wrap flex-col px-6 py-4 text-lg font-medium  text-blue-900  whitespace-nowrap border border-blue-900">
                     <div className="flex items-center justify-center">
-                      <Icon icon="fa:eye" />
-                      View
+                      <Icon icon="fa:eye" className="text-2xl pr-3" />
+                      <Icon icon="fa:edit" className="text-2xl pr-3" />
+                      <Icon
+                        icon="material-symbols:delete-forever"
+                        className="text-3xl pr-3"
+                      />
                     </div>
                   </td>
                 </tr>

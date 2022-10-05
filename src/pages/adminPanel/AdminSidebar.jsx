@@ -65,10 +65,12 @@ export default function AdminSidebar() {
               </button>
             </Link>
             {/* Members */}
-            <button className="sidebar-btn">
-              <Icon className="sidebar-icon text-[45px]" icon="fa:group" />
-              <h2 className="sidebar-txt text-base">Members</h2>
-            </button>
+            <Link to="/adminmembers" className="mr-4">
+              <button className="sidebar-btn">
+                <Icon className="sidebar-icon text-[90px]" icon="fa:group" />
+                <h2 className="sidebar-txt text-base">Members</h2>
+              </button>
+            </Link>
             {/* Confirm Transactions */}
             <Link to="/confirmtransaction" className="ml-4">
               <button className="sidebar-btn">

@@ -1,10 +1,10 @@
 import React from "react";
-import AdminNavbar from "./AdminNavbar";
-import AdminSidebar from "./AdminSidebar";
-import CStats from "./CStats";
-import CTransaction from "./CTransaction";
+import AdminNavbar from "../AdminNavbar";
+import AdminSidebar from "../AdminSidebar";
+import Transaction from "../Transaction";
+import MembersEdit from "./MembersEdit";
 
-export default function ConfirmTransaction() {
+export default function Edit() {
   return (
     <div>
       <div className="flex w-screen h-screen">
@@ -14,8 +14,8 @@ export default function ConfirmTransaction() {
         <div className="w-screen h-full overflow-scroll">
           <AdminNavbar />
           <div>
-            <CStats />
-            <CTransaction />
+            <MembersEdit />
+            <Transaction />
           </div>
         </div>
       </div>

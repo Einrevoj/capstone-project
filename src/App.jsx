@@ -13,6 +13,10 @@ import MainDashboard from "./pages/dashboard/MainDashboard";
 import VACDashboard from "./pages/adminPanel/VACDashboard";
 import AdminDashboard from "./pages/adminPanel/AdminDashboard";
 import ConfirmTransaction from "./pages/adminPanel/ConfirmTransaction";
+import AdminMembers from "./pages/adminPanel/AdminMembers";
+import Edit from "./pages/adminPanel/members/Edit";
+import Update from "./pages/adminPanel/members/Update";
+import Delete from "./pages/adminPanel/members/Delete";
 
 function App() {
   return (
@@ -31,6 +35,10 @@ function App() {
         <Route path="/vacdashboard" element={<VACDashboard />} />
         <Route path="/admindashboard" element={<AdminDashboard />} />
         <Route path="/confirmtransaction" element={<ConfirmTransaction />} />
+        <Route path="/adminmembers" element={<AdminMembers />} />
+        <Route path="/edit" element={<Edit />} />
+        <Route path="/update" element={<Update />} />
+        <Route path="/delete" element={<Delete />} />
       </Routes>
     </BrowserRouter>
   );
