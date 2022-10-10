@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function NotYetMemberBtn() {
   return (
@@ -6,9 +7,11 @@ export default function NotYetMemberBtn() {
       <h1 className="font-sans font-light text-white text-2xl">
         Not yet a Member?
       </h1>
-      <button className="font-sans font-bold text-white hover:text-secondary text-2xl">
-        Register Here.
-      </button>
+      <Link to="/register">
+        <button className="font-sans font-bold text-white hover:text-secondary text-2xl">
+          Register Here.
+        </button>
+      </Link>
     </div>
   );
 }

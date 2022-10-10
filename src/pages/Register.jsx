@@ -1,15 +1,104 @@
 import React from "react";
+import { useState } from "react";
 import hrImg from "../images/hr-mv.png";
 import logoImg from "../images/logo-white-orange.png";
+import { registerUser } from "../redux/actionUser";
 
 export default function Register() {
+  const [firstName, setFirstName] = useState("");
+  const [middleName, setMiddleName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [showModal, setShowModal] = useState(false);
+
+  // Validation
+  const [invalidFirstName, setInvalidFirstName] = useState(false);
+  const [invalidMiddleName, setInvalidMiddleName] = useState(false);
+  const [invalidLastName, setInvalidLastName] = useState(false);
+  const [invalidEmail, setInvalidEmail] = useState(false);
+  const [invalidPassword, setInvalidPassword] = useState(false);
+
+  const checkIfValid = () => {
+    let isValid = true;
+
+    // Check if password is same with confirmPassword
+    if (password !== confirmPassword || !password) {
+      setInvalidPassword(true);
+      isValid = false;
+    } else {
+      setInvalidPassword(false);
+    }
+
+    return isValid;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (checkIfValid()) {
+      //Call back API
+      registerUser({
+        firstName: firstName,
+        middleName: middleName,
+        lastName: lastName,
+        email: email,
+        password: password,
+      })
+        .then((response) => {
+          console.log(response, "response");
+          setInvalidFirstName(false);
+          setShowModal(true);
+        })
+        .catch((error) => {
+          setInvalidFirstName(true);
+          console.log(error, "error");
+        })
+        .then((response) => {
+          console.log(response, "response");
+          setInvalidMiddleName(false);
+          setShowModal(true);
+        })
+        .catch((error) => {
+          setInvalidMiddleName(true);
+          console.log(error, "error");
+        })
+        .then((response) => {
+          console.log(response, "response");
+          setInvalidLastName(false);
+          setShowModal(true);
+        })
+        .catch((error) => {
+          setInvalidLastName(true);
+          console.log(error, "error");
+        })
+        .then((response) => {
+          console.log(response, "response");
+          setInvalidEmail(false);
+          setShowModal(true);
+        })
+        .catch((error) => {
+          setInvalidEmail(true);
+          console.log(error, "error");
+        });
+    }
+  };
+
+  const closeRegistration = () => {
+    setShowModal(false);
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
+  };
+
   return (
     // main container
     <div className="w-full h-screen flex items-center justify-center fixed bg-regImg bg-cover">
       {/* registration form container */}
       <div className=" bg-primary h-screen w-full sm:m-4 sm:max-w-[770px] sm:max-h-[620px]  sm:rounded-3xl sm:shadow-lg md:shadow-gray-600">
         {/* form starts here */}
-        <form className="w-full mt-10 sm:mt-7" action="/">
+        <form className="w-full mt-10 sm:mt-7" onSubmit={handleSubmit}>
           {/* Logo */}
           <div className="flex flex-col items-center justify-center m-4 md:flex-row">
             <img className="h-16  md:h-24" src={logoImg} alt="" />
@@ -39,6 +128,9 @@ export default function Register() {
                 className="h-12 w-full md:max-w-md  rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4"
                 type="text"
                 placeholder="First Name"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                isInvalid={invalidFirstName}
               />
             </div>
 
@@ -54,6 +146,9 @@ export default function Register() {
                 className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4"
                 type="text"
                 placeholder="Middle Name"
+                value={middleName}
+                onChange={(e) => setMiddleName(e.target.value)}
+                isInvalid={invalidMiddleName}
               />
             </div>
 
@@ -69,6 +164,9 @@ export default function Register() {
                 className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4"
                 type="text"
                 placeholder="Last Name"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                isInvalid={invalidLastName}
               />
             </div>
 
@@ -84,6 +182,9 @@ export default function Register() {
                 className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4"
                 type="text"
                 placeholder="Email Address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                isInvalid={invalidEmail}
               />
             </div>
 
@@ -99,6 +200,9 @@ export default function Register() {
                 className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4"
                 type="password"
                 placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                isInvalid={invalidPassword}
               />
             </div>
 
@@ -114,11 +218,17 @@ export default function Register() {
                 className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4"
                 type="password"
                 placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                isInvalid={invalidPassword}
               />
             </div>
             {/* Inputs Ends Here */}
             <div className="w-full flex flex-row justify-end">
-              <button class="group overflow-hidden mt-4 px-6 h-12 rounded-lg flex items-center bg-secondary hover:bg-orange-600">
+              <button
+                class="group overflow-hidden mt-4 px-6 h-12 rounded-lg flex items-center bg-secondary hover:bg-orange-600"
+                onClick={() => setShowModal(false)}
+              >
                 <span class="font-sans font-medium text-xl text-white pl-1">
                   Create Account
                 </span>
