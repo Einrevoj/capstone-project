@@ -2,7 +2,7 @@ import React from "react";
 import logoImg from "../images/logo-white-orange.png";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
-import * as actionUser from "../redux/actionUser";
+// import * as actionUser from "../redux/actionUser";
 import { useSelector } from "react-redux";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
@@ -64,7 +64,7 @@ export default function NavBar() {
               <a href="#about">
                 <li className="hover:text-secondary">ABOUT US</li>
               </a>
-              <Link to="/maindashboard">
+              <Link to="/memberdashboard">
                 <li className="hover:text-secondary">MEMBERSHIP</li>
               </Link>
               <li className="hover:text-secondary">INVESTMENT</li>

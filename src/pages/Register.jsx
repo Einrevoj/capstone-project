@@ -1,8 +1,10 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import hrImg from "../images/hr-mv.png";
 import logoImg from "../images/logo-white-orange.png";
 import { registerUser } from "../redux/actionUser";
+
+import AlreadyMemberBtn from "../components/utilities/AlreadyMemberBtn";
 
 export default function Register() {
   const [firstName, setFirstName] = useState("");
@@ -91,7 +93,6 @@ export default function Register() {
     setPassword("");
     setConfirmPassword("");
   };
-
   return (
     // main container
     <div className="w-full h-screen flex items-center justify-center fixed bg-regImg bg-cover">
@@ -101,7 +102,10 @@ export default function Register() {
         <form className="w-full mt-10 sm:mt-7" onSubmit={handleSubmit}>
           {/* Logo */}
           <div className="flex flex-col items-center justify-center m-4 md:flex-row">
-            <img className="h-16  md:h-24" src={logoImg} alt="" />
+            <Link to="/">
+              <img className="h-16  md:h-24" src={logoImg} alt="" />
+            </Link>
+
             <div className="flex flex-col items-center md:space-x-2">
               <h2 className="font-sans font-bold text-white text-center text-lg md:text-xl">
                 Virtual Assest Credit Cooperative
@@ -125,7 +129,7 @@ export default function Register() {
               </label>
 
               <input
-                className="h-12 w-full md:max-w-md  rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4"
+                className="h-12 w-full md:max-w-md  rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4 text-2xl pl-5"
                 type="text"
                 placeholder="First Name"
                 value={firstName}
@@ -143,7 +147,7 @@ export default function Register() {
                 Middle Name
               </label>
               <input
-                className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4"
+                className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4 text-2xl pl-5"
                 type="text"
                 placeholder="Middle Name"
                 value={middleName}
@@ -161,7 +165,7 @@ export default function Register() {
                 Last Name
               </label>
               <input
-                className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4"
+                className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4 text-2xl pl-5"
                 type="text"
                 placeholder="Last Name"
                 value={lastName}
@@ -179,8 +183,8 @@ export default function Register() {
                 Email Address
               </label>
               <input
-                className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4"
-                type="text"
+                className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4 text-2xl pl-5"
+                type="email"
                 placeholder="Email Address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -197,12 +201,12 @@ export default function Register() {
                 Password
               </label>
               <input
-                className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4"
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                isInvalid={invalidPassword}
+               className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4 text-2xl pl-5"
+               type="password"
+               placeholder="Password"
+               value={password}
+               onChange={(e) => setPassword(e.target.value)}
+               isInvalid={invalidPassword}
               />
             </div>
 
@@ -215,20 +219,18 @@ export default function Register() {
                 Confirm Password
               </label>
               <input
-                className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4"
-                type="password"
-                placeholder="Confirm Password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                isInvalid={invalidPassword}
+               className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4 text-2xl pl-5"
+               type="password"
+               placeholder="Confirm Password"
+               value={confirmPassword}
+               onChange={(e) => setConfirmPassword(e.target.value)}
+               isInvalid={invalidPassword}
               />
             </div>
             {/* Inputs Ends Here */}
-            <div className="w-full flex flex-row justify-end">
-              <button
-                class="group overflow-hidden mt-4 px-6 h-12 rounded-lg flex items-center bg-secondary hover:bg-orange-600"
-                onClick={() => setShowModal(false)}
-              >
+            <div className="w-full flex flex-row justify-end space-x-5">
+              <AlreadyMemberBtn />
+              <button class="group overflow-hidden mt-4 px-6 h-12 rounded-lg flex items-center bg-secondary hover:bg-orange-600">
                 <span class="font-sans font-medium text-xl text-white pl-1">
                   Create Account
                 </span>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Icon } from "@iconify/react";
-import logoImg from "../../images/logo-white-orange.png";
+import logoImg from "../../../images/logo-white-orange.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 

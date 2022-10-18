@@ -1,4 +1,4 @@
-import {put} from '../components/utilities/https';
+import {put, post} from '../components/utilities/https';
 
 export const registerUser = (newUserDetails) => {
     const url ='/user/signup';
@@ -18,12 +18,31 @@ export const registerUser = (newUserDetails) => {
 
 
 export const loginUser = (activeUserDetails) => {
-    return (dispatch) => {
-        dispatch({
-            type: 'LOGIN_USER',
-            payload: activeUserDetails
+    const url = '/user/login';
+    return new Promise((resolve, reject) => {
+        const promise = post(url, activeUserDetails)
+        promise.then((response) => {
+            resolve({
+                type: 'LOGIN_USER',
+            })
+        }).catch((error) => {
+            reject(error)
         })
-    }
+    })
+}
+
+export const loginUserViaProvider = (email) => {
+    const url = `/user/loginByProvider/${email}`;
+    return new Promise((resolve, reject) => {
+        const promise = post(url)
+        promise.then((response) => {
+            resolve({
+                type: 'LOGIN_USER',
+            })
+        }).catch((error) => {
+            reject(error)
+        })
+    })
 }
 
 export const logoutUser = () => {

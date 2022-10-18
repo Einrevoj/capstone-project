@@ -1,7 +1,23 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 
+import { useNavigate } from "react-router-dom";
+
 export default function MainStats() {
+  const navigate = useNavigate();
+
+  const navToCashIn = () => {
+    navigate("/memberwallet/cashin");
+  };
+
+  const navToCashOut = () => {
+    navigate("/memberwallet/cashout");
+  };
+
+  const navToInvest = () => {
+    navigate("/memberwallet/invest");
+  };
+
   return (
     // Main Stats Container
     <div className="flex flex-col items-center md:flex-row md:justify-around h-2/3 mt-4">
@@ -16,7 +32,9 @@ export default function MainStats() {
         {/* Main Text */}
         <h1 className="stat-figure">100,000.00</h1>
         {/* Button */}
-        <button className="stat-btn">VIEW DETAILS</button>
+        <button onClick={navToInvest} className="stat-btn">
+          VIEW DETAILS
+        </button>
       </div>
       {/* End Virtual Assets Stats */}
 
@@ -31,7 +49,9 @@ export default function MainStats() {
         {/* Main Text */}
         <h1 className="stat-figure">35,557.00</h1>
         {/* Button */}
-        <button className="stat-btn">VIEW DETAILS</button>
+        <button onClick={navToCashIn} className="stat-btn">
+          VIEW DETAILS
+        </button>
       </div>
       {/* End Cash In Stats */}
 
@@ -46,7 +66,9 @@ export default function MainStats() {
         {/* Main Text */}
         <h1 className="stat-figure">57,500.00</h1>
         {/* Button */}
-        <button className="stat-btn">VIEW DETAILS</button>
+        <button onClick={navToCashOut} className="stat-btn">
+          VIEW DETAILS
+        </button>
       </div>
       {/* End Virtual Assets Stats */}
     </div>

@@ -5,40 +5,66 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Members from "./pages/dashboard/Members";
-import SidePanel from "./pages/dashboard/SidePanel";
-import MainStats from "./pages/dashboard/MainStats";
 import DashboardNav from "./pages/dashboard/DashboardNav";
-import MainDashboard from "./pages/dashboard/MainDashboard";
-import VACDashboard from "./pages/adminPanel/VACDashboard";
-import AdminDashboard from "./pages/adminPanel/AdminDashboard";
-import ConfirmTransaction from "./pages/adminPanel/ConfirmTransaction";
-import AdminMembers from "./pages/adminPanel/AdminMembers";
-import Edit from "./pages/adminPanel/members/Edit";
-import Update from "./pages/adminPanel/members/Update";
-import Delete from "./pages/adminPanel/members/Delete";
+
+// members dashboard panels
+import MemberSidePanel from "./pages/dashboard/members/MemberSidePanel";
+import MemberStat from "./pages/dashboard/members/MemberStat";
+import MemberDashboard from "./pages/dashboard/members/MemberDashboard";
+// members dashboard contents
+import MemberProfile from "./pages/dashboard/members/MemberProfile";
+import MemberTransactions from "./pages/dashboard/members/MemberTransactions";
+import MemberWallet from "./pages/dashboard/members/MemberWallet";
+
+import CashIn from "./pages/dashboard/members/wallet/CashIn";
+import CashOut from "./pages/dashboard/members/wallet/CashOut";
+import Invest from "./pages/dashboard/members/wallet/Invest";
+
+import VACDashboard from "./pages/dashboard/admin/VACDashboard";
+import AdminDashboard from "./pages/dashboard/admin/AdminDashboard";
+import ConfirmTransaction from "./pages/dashboard/admin/ConfirmTransaction";
+import AdminMembers from "./pages/dashboard/admin/AdminMembers";
+
+import Edit from "./pages/dashboard/members/Edit";
+import Update from "./pages/dashboard/members/Update";
+import Delete from "./pages/dashboard/members/Delete";
+import Admin from "./pages/dashboard/admin/Admin";
 
 function App() {
   return (
     <BrowserRouter>
       {/* <NavBar /> */}
       <Routes>
-        {/* Landing Page - Home */}
+        {/* Main Pages*/}
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/members" element={<Members />} />
-        <Route path="/sidepanel" element={<SidePanel />} />
-        <Route path="/mainstat" element={<MainStats />} />
+
+        {/* Members Dashboard Panels */}
         <Route path="/dashboardnav" element={<DashboardNav />} />
-        <Route path="/maindashboard" element={<MainDashboard />} />
+        <Route path="/sidepanel" element={<MemberSidePanel />} />
+        <Route path="/memberdashboard" element={<MemberDashboard />} />
+        <Route path="/memberwallet" element={<MemberWallet />} />
+
+        {/* Member Dashboard Content */}
+        <Route path="/memberstat" element={<MemberStat />} />
+        <Route path="/memberprofile" element={<MemberProfile />} />
+        <Route path="/membertransactions" element={<MemberTransactions />} />
+        {/* Members Wallet Operations */}
+        <Route path="/memberwallet/cashin" element={<CashIn />} />
+        <Route path="/memberwallet/cashout" element={<CashOut />} />
+        <Route path="/memberwallet/invest" element={<Invest />} />
+
+        {/*Admin Members Action Pages */}
+        <Route path="/edit" element={<Edit />} />
+        <Route path="/update" element={<Update />} />
+        <Route path="/delete" element={<Delete />} />
+
         <Route path="/vacdashboard" element={<VACDashboard />} />
         <Route path="/admindashboard" element={<AdminDashboard />} />
         <Route path="/confirmtransaction" element={<ConfirmTransaction />} />
         <Route path="/adminmembers" element={<AdminMembers />} />
-        <Route path="/edit" element={<Edit />} />
-        <Route path="/update" element={<Update />} />
-        <Route path="/delete" element={<Delete />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,10 +1,10 @@
 import React from "react";
-import AdminNavbar from "../AdminNavbar";
-import AdminSidebar from "../AdminSidebar";
-import Transaction from "../Transaction";
-import MembersEdit from "./MembersEdit";
+import AdminNavbar from "../../dashboard/admin/AdminNavbar";
+import AdminSidebar from "../../dashboard/admin/AdminSidebar";
+import Transaction from "../../dashboard/admin/Transaction";
+import MembersDelete from "./MembersDelete";
 
-export default function Edit() {
+export default function Delete() {
   return (
     <div>
       <div className="flex w-screen h-screen">
@@ -14,7 +14,7 @@ export default function Edit() {
         <div className="w-screen h-full overflow-scroll">
           <AdminNavbar />
           <div>
-            <MembersEdit />
+            <MembersDelete />
             <Transaction />
           </div>
         </div>

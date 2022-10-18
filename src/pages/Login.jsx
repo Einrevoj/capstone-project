@@ -5,9 +5,6 @@ import logoImg from "../images/logo-white-orange.png";
 import NotYetMemberBtn from "../components/utilities/NotYetMemberBtn";
 import LoginAlt from "../components/utilities/LoginAlt";
 
-// Icons
-// import { Icon } from "@iconify/react";
-
 export default function Login() {
   return (
     // Fullpage Container

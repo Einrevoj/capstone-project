@@ -1,7 +1,7 @@
 import React from "react";
-import AdminNavbar from "../AdminNavbar";
-import AdminSidebar from "../AdminSidebar";
-import Transaction from "../Transaction";
+import AdminNavbar from "../../dashboard/admin/AdminNavbar";
+import AdminSidebar from "../../dashboard/admin/AdminSidebar";
+import Transaction from "../../dashboard/admin/Transaction";
 import MembersUpdate from "./MembersUpdate";
 
 export default function Update() {
