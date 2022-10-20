@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as actionMemberList from "../../../redux/actionMemberList";
 import { Icon } from "@iconify/react";
 import { bindActionCreators } from "redux";

@@ -77,7 +77,7 @@ export default function MemberListAdmin() {
     return isValid;
   };
 
-  function MyMemberList(memberlist) {
+  function MyMemberList(memberList) {
     // Callback function
     const onDrop = useCallback((acceptedFiles) => {
       const file = acceptedFiles[0];
@@ -87,11 +87,15 @@ export default function MemberListAdmin() {
 
       // Upload to s3
       axios
-        .put(formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        })
+        .put(
+          `https://capstone-vac.herokuapp.com/memberlist/${memberList.memberlistId}`,
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        )
         .then(() => {
           console.log("file uploaded successfully");
           window.location.reload();
@@ -106,13 +110,13 @@ export default function MemberListAdmin() {
 
     // Return statement
     return (
-      <div className="card h-100 text-center p-4">
+      <div className="card h-50 text-center p-4">
         <div className="card-body">
-          <p className="card-text lead fw-bold">{memberlist.firstName}</p>
-          <p className="card-text lead fw-bold">{memberlist.lastName}</p>
-          <p className="card-text lead fw-bold">{memberlist.contactNumber}</p>
-          <p className="card-text lead fw-bold">{memberlist.status}</p>
-          <button onClick={() => deleteMemberList(memberlist.memberlistId)}>
+          <p className="card-text lead fw-bold">{memberList.firstName}</p>
+          <p className="card-text lead fw-bold">{memberList.lastName}</p>
+          <p className="card-text lead fw-bold">{memberList.contactNumber}</p>
+          <p className="card-text lead fw-bold">{memberList.status}</p>
+          <button onClick={() => deleteMemberList(memberList.memberlistId)}>
             DELETE
           </button>
         </div>
@@ -123,8 +127,8 @@ export default function MemberListAdmin() {
   const renderMemberList = () => {
     return (
       <>
-        {memberList.map((memberlist) => (
-          <React.Fragment key={memberlist.memberlistId}>
+        {memberList.map((memberList) => (
+          <React.Fragment key={memberList.memberlistId}>
             <div
               className="col-md-3 mb-4"
               style={{ height: "300px", width: "250px" }}

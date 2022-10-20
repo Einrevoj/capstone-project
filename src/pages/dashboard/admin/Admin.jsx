@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import IncomeAdmin from "./IncomeAdmin";
 import MemberListAdmin from "./MemberListAdmin";
 
 export default function Admin() {
@@ -29,6 +30,7 @@ export default function Admin() {
         <br />
         <br />
         <h3>Income</h3>
+        <IncomeAdmin />
         <br />
         <br />
         <h3>Expense</h3>
