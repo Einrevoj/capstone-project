@@ -107,7 +107,7 @@ export default function IncomeAdmin() {
       <hr />
       <Form onSubmit={handleSubmit} className="row">
         {/* Deposit To */}
-        <Form.Group controlId="formincomeFrom" className="w-50">
+        <Form.Group controlId="formIncomeFrom" className="w-50">
           <Form.Control
             type="text"
             size="sm"
@@ -135,7 +135,7 @@ export default function IncomeAdmin() {
         </Form.Group>
 
         {/* Deposit To */}
-        <Form.Group controlId="formdepositTo" className="w-50">
+        <Form.Group controlId="formDepositTo" className="w-50">
           <Form.Control
             type="text"
             size="sm"
@@ -171,7 +171,7 @@ export default function IncomeAdmin() {
             onChange={(e) => setAccountName(e.target.value)}
           ></Form.Control>
           <Form.Control.Feedback type="invalid">
-            Please input account Number
+            Please input account Name
           </Form.Control.Feedback>
         </Form.Group>
 
