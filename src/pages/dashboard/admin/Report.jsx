@@ -1,4 +1,6 @@
 import React from "react";
+import Investment from "./Investment";
+import ReportExpense from "./ReportExpense";
 import ReportIncome from "./ReportIncome";
 
 export default function Report() {
@@ -95,165 +97,13 @@ export default function Report() {
                     className={openTab === 2 ? "block" : "hidden"}
                     id="link2"
                   >
-                    <form action="">
-                      <h2 className="flex justify-end pr-5 pl-5 w-full h-10 font-sans font-semibold text-blue-900 text-lg md:pl-5">
-                        Report Expense
-                      </h2>
-
-                      {/* Income Input  */}
-                      <div className="w-full flex flex-col   font-sans font-normal text-lg text-primary mt-4 pl-5 pr-5 md:flex-row md:items-center md:justify-between md:font-medium md:mt-4 ">
-                        <label className="hidden md:flex">Expense For</label>
-                        <input
-                          className="border border-primary rounded-lg md:w-2/3 h-9 placeholder:pl-4 text-right pr-5"
-                          type="text"
-                          placeholder="Marketing"
-                        />
-                      </div>
-                      {/* End Input */}
-                      {/* Amount Input  */}
-                      <div className="w-full flex flex-col   font-sans font-normal text-lg text-primary mt-4 pl-5 pr-5 md:flex-row md:items-center md:justify-between md:font-medium md:mt-4 ">
-                        <label className="hidden md:flex">Amount</label>
-                        <input
-                          className="border border-primary rounded-lg md:w-2/3 h-9 placeholder:pl-4 text-right"
-                          type="number"
-                          placeholder="5,000.00"
-                        />
-                      </div>
-                      {/* End Input */}
-                      {/* Deposit Input  */}
-                      <div className="w-full flex flex-col   font-sans font-normal text-lg text-primary mt-4 pl-5 pr-5 md:flex-row md:items-center md:justify-between md:font-medium md:mt-4 ">
-                        <label className="hidden md:flex">Withdrawn From</label>
-                        <input
-                          className="border border-primary rounded-lg md:w-2/3 h-9 placeholder:pl-4 text-right pr-5"
-                          type="text"
-                          placeholder="Unionbank - Expense"
-                        />
-                      </div>
-                      {/* End Input */}
-                      {/* Account number Input  */}
-                      <div className="w-full flex flex-col   font-sans font-normal text-lg text-primary mt-4 pl-5 pr-5 md:flex-row md:items-center md:justify-between md:font-medium md:mt-4 ">
-                        <label className="hidden md:flex">Acount Number</label>
-                        <input
-                          className="border border-primary rounded-lg md:w-2/3 h-9 placeholder:pl-4 text-right"
-                          type="number"
-                          placeholder="5235153413"
-                        />
-                      </div>
-                      {/* End Input */}
-                      {/* Account name Input  */}
-                      <div className="w-full flex flex-col   font-sans font-normal text-lg text-primary mt-4 pl-5 pr-5 md:flex-row md:items-center md:justify-between md:font-medium md:mt-4 ">
-                        <label className="hidden md:flex">Upload Receipt</label>
-                        <input
-                          className="border border-primary rounded-lg md:w-2/3 h-9 placeholder:pl-4 text-right pr-5"
-                          type="text"
-                          placeholder="laguna meeting 100122341.pdf"
-                        />
-                      </div>
-                      {/* End Input */}
-                      {/* Proof Input  */}
-                      <div className="w-full flex flex-col   font-sans font-normal text-lg text-primary mt-4 pl-5 pr-5 md:flex-row md:items-center md:justify-between md:font-medium md:mt-4 ">
-                        <label className="hidden md:flex">
-                          Proof of Transaction
-                        </label>
-                        <input
-                          className="border border-primary rounded-lg md:w-2/3 h-9 placeholder:pl-4 text-right pr-5"
-                          type="text"
-                          placeholder="UB-MicroBiz 10012232342.jpg"
-                        />
-                      </div>
-                      {/* End Input */}
-                      <div className="flex justify-end">
-                        <button
-                          type="submit"
-                          className="w-1/4 m-5 inline-block px-6 py-2.5 bg-blue-900 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-                        >
-                          Confirm
-                        </button>
-                      </div>
-                    </form>
+                    <ReportExpense />
                   </div>
                   <div
                     className={openTab === 3 ? "block" : "hidden"}
                     id="link3"
                   >
-                    <form action="">
-                      <h2 className="flex justify-end pr-5 pl-5 w-full h-10 font-sans font-semibold text-blue-900 text-lg md:pl-5">
-                        Report Investment
-                      </h2>
-
-                      {/* Income Input  */}
-                      <div className="w-full flex flex-col   font-sans font-normal text-lg text-primary mt-4 pl-5 pr-5 md:flex-row md:items-center md:justify-between md:font-medium md:mt-4 ">
-                        <label className="hidden md:flex">Invested To</label>
-                        <input
-                          className="border border-primary rounded-lg md:w-2/3 h-9 placeholder:pl-4 text-right pr-5"
-                          type="text"
-                          placeholder="Crypto Asset"
-                        />
-                      </div>
-                      {/* End Input */}
-                      {/* Amount Input  */}
-                      <div className="w-full flex flex-col   font-sans font-normal text-lg text-primary mt-4 pl-5 pr-5 md:flex-row md:items-center md:justify-between md:font-medium md:mt-4 ">
-                        <label className="hidden md:flex">Platform Used</label>
-                        <input
-                          className="border border-primary rounded-lg md:w-2/3 h-9 placeholder:pl-4 text-right pr-5"
-                          type="text"
-                          placeholder="Binance Account"
-                        />
-                      </div>
-                      {/* End Input */}
-                      {/* Deposit Input  */}
-                      <div className="w-full flex flex-col   font-sans font-normal text-lg text-primary mt-4 pl-5 pr-5 md:flex-row md:items-center md:justify-between md:font-medium md:mt-4 ">
-                        <label className="hidden md:flex">Withdrawn From</label>
-                        <input
-                          className="border border-primary rounded-lg md:w-2/3 h-9 placeholder:pl-4 text-right pr-5"
-                          type="text"
-                          placeholder="Unionbank - Investment"
-                        />
-                      </div>
-                      {/* End Input */}
-                      {/* Account number Input  */}
-                      <div className="w-full flex flex-col   font-sans font-normal text-lg text-primary mt-4 pl-5 pr-5 md:flex-row md:items-center md:justify-between md:font-medium md:mt-4 ">
-                        <label className="hidden md:flex">Amount</label>
-                        <input
-                          className="border border-primary rounded-lg md:w-2/3 h-9 placeholder:pl-4 text-right"
-                          type="number"
-                          placeholder="300,000.00"
-                        />
-                      </div>
-                      {/* End Input */}
-                      {/* Account name Input  */}
-                      <div className="w-full flex flex-col   font-sans font-normal text-lg text-primary mt-4 pl-5 pr-5 md:flex-row md:items-center md:justify-between md:font-medium md:mt-4 ">
-                        <label className="hidden md:flex">
-                          Transaction Slip
-                        </label>
-                        <input
-                          className="border border-primary rounded-lg md:w-2/3 h-9 placeholder:pl-4 text-right pr-5"
-                          type="text"
-                          placeholder="Binanceinvest 100122341.jpg"
-                        />
-                      </div>
-                      {/* End Input */}
-                      {/* Proof Input  */}
-                      <div className="w-full flex flex-col   font-sans font-normal text-lg text-primary mt-4 pl-5 pr-5 md:flex-row md:items-center md:justify-between md:font-medium md:mt-4 ">
-                        <label className="hidden md:flex">
-                          Proof of Transaction
-                        </label>
-                        <input
-                          className="border border-primary rounded-lg md:w-2/3 h-9 placeholder:pl-4 text-right pr-5"
-                          type="text"
-                          placeholder="UB-Investing 10012232342.jpg"
-                        />
-                      </div>
-                      {/* End Input */}
-                      <div className="flex justify-end">
-                        <button
-                          type="submit"
-                          className="w-1/4 m-5 inline-block px-6 py-2.5 bg-blue-900 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-                        >
-                          Confirm
-                        </button>
-                      </div>
-                    </form>
+                    <Investment />
                   </div>
                 </div>
               </div>

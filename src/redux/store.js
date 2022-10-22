@@ -8,12 +8,19 @@ import logger from 'redux-logger';
 import userReducer from "./userReducer";
 import memberListReducer from "./memberListReducer";
 import incomeReducer from "./incomeReducer";
+import expenseReducer from "./expenseReducer";
+import investmentReducer from "./investmentReducer";
 
 export const store = configureStore({
     reducer: {
         activeUser: userReducer,
         memberList: memberListReducer,
         reportIncome: incomeReducer,
+        reportExpense: expenseReducer,
+        investment: investmentReducer,
+
+
+
     },
     middleware: [
         thunk,

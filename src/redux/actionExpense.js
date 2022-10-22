@@ -1,12 +1,12 @@
 import {put, get, deleteMethod} from '../components/utilities/https';
 
-export const getAllReportIncome = () => {
-    const url = '/reportincome/getAll';
+export const getAllReportExpense = () => {
+    const url = '/reportexpense/getAll';
     return new Promise((resolve, reject) => {
         const promise = get(url);
         promise.then((response) => {
             resolve({
-                type: 'SAVE_REPORTINCOME',
+                type: 'SAVE_REPORTEXPENSE',
                 payload: response
             })
         }).catch((error) => {
@@ -15,13 +15,13 @@ export const getAllReportIncome = () => {
     })
 }
 
-export const getReportIncome = (incomeId) => {
-    const url = `/reportincome/getById/${incomeId}`;
+export const getReportExpense = (expenseId) => {
+    const url = `/reportexpense/getById/${expenseId}`;
     return new Promise((resolve, reject) => {
         const promise = get(url);
         promise.then((response) => {
             resolve({
-                type: 'GET_ACTIVE_REPORTINCOME',
+                type: 'GET_ACTIVE_REPORTEXPENSE',
                 payload: response
             })
         }).catch((error) => {
@@ -31,13 +31,13 @@ export const getReportIncome = (incomeId) => {
 }
 
 
-export const addReportIncome = (body) => {
-    const url = '/reportincome/add';
+export const addReportExpense = (body) => {
+    const url = '/reportexpense/add';
     return new Promise((resolve, reject) => {
         const promise = put(url, body);
         promise.then((response) => {
             resolve({
-                type: 'SAVE_REPORTINCOME',
+                type: 'SAVE_REPORTEXPENSE',
                 payload: response
             })
         }).catch((error) => {
@@ -46,13 +46,13 @@ export const addReportIncome = (body) => {
     })
 }
 
-export const deleteReportIncome = (incomeId) => {
-    const url = `/reportincome/delete/${incomeId}`;
+export const deleteReportExpense = (expenseId) => {
+    const url = `/reportexpense/delete/${expenseId}`;
     return new Promise((resolve, reject) => {
         const promise = deleteMethod(url);
         promise.then((response) => {
             resolve({
-                type: 'SAVE_REPORTINCOME',
+                type: 'SAVE_REPORTEXPENSE',
                 payload: response
             })
         }).catch((error) => {

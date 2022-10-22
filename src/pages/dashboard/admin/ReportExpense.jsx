@@ -1,37 +1,37 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import * as actionIncome from "../../../redux/actionIncome";
+import * as actionExpense from "../../../redux/actionExpense";
 import { bindActionCreators } from "redux";
 import { useDispatch } from "react-redux";
 
-export default function ReportIncome() {
-  const [reportIncome, setReportIncome] = useState([]);
-  const { getAllReportIncome } = bindActionCreators(
-    actionIncome,
+export default function ReportExpense() {
+  const [reportExpense, setReportExpense] = useState([]);
+  const { getAllReportExpense } = bindActionCreators(
+    actionExpense,
     useDispatch()
   );
   const navigate = useNavigate();
 
   useEffect(() => {
-    getAllReportIncome().then((response) => {
-      setReportIncome(response ? response.payload : []);
+    getAllReportExpense().then((response) => {
+      setReportExpense(response ? response.payload : []);
     });
   }, []);
 
-  const renderReportIncome = () => {
-    return reportIncome?.map((reportIncome) => (
+  const renderReportExpense = () => {
+    return reportExpense?.map((reportExpense) => (
       <form action="">
         <h2 className="flex justify-end pr-5 pl-5 w-full h-10 font-sans font-semibold text-blue-900 text-lg md:pl-5">
-          Report Income
+          Report Expense
         </h2>
 
-        {/* Income Input  */}
+        {/* Expense Input  */}
         <div className="w-full flex flex-col   font-sans font-normal text-lg text-primary mt-4 pl-5 pr-5 md:flex-row md:items-center md:justify-between md:font-medium md:mt-4 ">
-          <label className="hidden md:flex">Income From</label>
+          <label className="hidden md:flex">Expense From</label>
           <input
             className="border border-primary rounded-lg md:w-2/3 h-9 placeholder:pl-4 text-right pr-5"
             type="text"
-            placeholder={reportIncome.incomeFrom}
+            placeholder={reportExpense.expenseFrom}
           />
         </div>
         {/* End Input */}
@@ -41,17 +41,17 @@ export default function ReportIncome() {
           <input
             className="border border-primary rounded-lg md:w-2/3 h-9 placeholder:pl-4 text-right"
             type="number"
-            placeholder={reportIncome.amount}
+            placeholder={reportExpense.amount}
           />
         </div>
         {/* End Input */}
-        {/* Deposit Input  */}
+        {/* Withdrawn Input  */}
         <div className="w-full flex flex-col   font-sans font-normal text-lg text-primary mt-4 pl-5 pr-5 md:flex-row md:items-center md:justify-between md:font-medium md:mt-4 ">
-          <label className="hidden md:flex">Deposit To</label>
+          <label className="hidden md:flex">Withdrawn From</label>
           <input
             className="border border-primary rounded-lg md:w-2/3 h-9 placeholder:pl-4 text-right pr-5"
             type="text"
-            placeholder={reportIncome.depositTo}
+            placeholder={reportExpense.withdrawnFrom}
           />
         </div>
         {/* End Input */}
@@ -61,27 +61,18 @@ export default function ReportIncome() {
           <input
             className="border border-primary rounded-lg md:w-2/3 h-9 placeholder:pl-4 text-right"
             type="number"
-            placeholder={reportIncome.accountNumber}
+            placeholder={reportExpense.accountNumber}
           />
         </div>
         {/* End Input */}
-        {/* Account name Input  */}
-        <div className="w-full flex flex-col   font-sans font-normal text-lg text-primary mt-4 pl-5 pr-5 md:flex-row md:items-center md:justify-between md:font-medium md:mt-4 ">
-          <label className="hidden md:flex">Acount Name</label>
-          <input
-            className="border border-primary rounded-lg md:w-2/3 h-9 placeholder:pl-4 text-right pr-5"
-            type="text"
-            placeholder={reportIncome.accountName}
-          />
-        </div>
-        {/* End Input */}
+
         {/* Proof Input  */}
         <div className="w-full flex flex-col   font-sans font-normal text-lg text-primary mt-4 pl-5 pr-5 md:flex-row md:items-center md:justify-between md:font-medium md:mt-4 ">
           <label className="hidden md:flex">Proof of Transaction</label>
           <input
             className="border border-primary rounded-lg md:w-2/3 h-9 placeholder:pl-4 text-right pr-5"
             type="text"
-            placeholder={reportIncome.proofTrans}
+            placeholder={reportExpense.proofTrans}
           />
         </div>
         {/* End Input */}
@@ -99,16 +90,16 @@ export default function ReportIncome() {
 
   return (
     <>
-      <div id="reportincome">
+      <div id="reportexpense">
         <div className="container py-5">
           <div className="relative flex flex-wrap items-center justify-between px-2 py-3">
             <div className="relative">
               <h3 className="font-bold text-blue-900 text-2xl">
-                Report Income
+                Report Expense
               </h3>
             </div>
           </div>
-          <div className="row py-4">{renderReportIncome()}</div>
+          <div className="row py-4">{renderReportExpense()}</div>
         </div>
       </div>
     </>
