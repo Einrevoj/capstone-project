@@ -45,7 +45,7 @@ export default function ExpenseAdmin() {
       // Upload to s3
       axios
         .put(
-          `https://vacportal.herokuapp.com/reportexpense/${reportExpense.expenseId}`,
+          `https://mikezgarcia.com/reportexpense/${reportExpense.expenseId}`,
           formData,
           {
             headers: {

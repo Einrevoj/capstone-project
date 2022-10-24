@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const APIServicePath = "https://vacportal.herokuapp.com";
+const APIServicePath = "https://mikezgarcia.com";
 
 function getInstance(url) {
   return axios.create({

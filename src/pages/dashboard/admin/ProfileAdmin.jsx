@@ -50,15 +50,11 @@ export default function ProfileAdmin() {
 
       // Upload to s3
       axios
-        .put(
-          `https://vacportal.herokuapp.com/profile/${profile.memberId}`,
-          formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        )
+        .put(`https://mikezgarcia.com/profile/${profile.memberId}`, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
         .then(() => {
           console.log("file uploaded successfully");
           window.location.reload();

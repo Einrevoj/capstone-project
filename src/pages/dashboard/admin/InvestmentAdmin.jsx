@@ -45,7 +45,7 @@ export default function InvestmentAdmin() {
       // Upload to s3
       axios
         .put(
-          `https://vacportal.herokuapp.com/investment/${investment.investmentId}`,
+          `https://mikezgarcia.com/investment/${investment.investmentId}`,
           formData,
           {
             headers: {

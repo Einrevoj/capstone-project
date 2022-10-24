@@ -47,7 +47,7 @@ export default function IncomeAdmin() {
       // Upload to s3
       axios
         .put(
-          `https://vacportal.herokuapp.com/reportincome/${reportIncome.incomeId}`,
+          `https://mikezgarcia.com/reportincome/${reportIncome.incomeId}`,
           formData,
           {
             headers: {
