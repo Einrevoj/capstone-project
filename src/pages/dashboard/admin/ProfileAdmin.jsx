@@ -73,20 +73,43 @@ export default function ProfileAdmin() {
 
     // Return statement
     return (
-      <div className="card h-50 text-center p-4">
-        <div className="card-body">
-          <p className="card-text lead fw-bold">{profile.email}</p>
-          <p className="card-text lead fw-bold">{profile.birthday}</p>
-          <p className="card-text lead fw-bold">{profile.contactNumber}</p>
-          <p className="card-text lead fw-bold">{profile.address}</p>
-          <p className="card-text lead fw-bold">{profile.occupation}</p>
-          <p className="card-text lead fw-bold">{profile.employer}</p>
-          <p className="card-text lead fw-bold">{profile.position}</p>
-          <button onClick={() => deleteProfile(profile.memberId)}>
-            DELETE
-          </button>
+      <>
+        <div className="flex flex-col m-5">
+          <table className="min-w-full divide-y divide-gray-200">
+            <tbody className="divide-y divide-gray-200 border border-blue-900">
+              <tr>
+                <td className="px-6 py-4 text-lg font-medium text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {profile.email}
+                </td>
+                <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {profile.birthday}
+                </td>
+                <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {profile.contactNumber}
+                </td>
+                <td className="px-6 py-4 text-lg font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {profile.address}
+                </td>
+                <td className="px-6 py-4 text-lg font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {profile.occupation}
+                </td>
+                <td className="px-6 py-4 text-lg font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {profile.employer}
+                </td>
+                <td className="px-6 py-4 text-lg font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {profile.position}
+                </td>
+                <button
+                  className="px-6 py-4 text-lg font-medium  text-red-900 text-center whitespace-nowrap border border-blue-900"
+                  onClick={() => deleteProfile(profile.memberId)}
+                >
+                  DELETE
+                </button>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div>
+      </>
     );
   }
 
@@ -97,7 +120,7 @@ export default function ProfileAdmin() {
           <React.Fragment key={profile.memberId}>
             <div
               className="col-md-3 mb-4"
-              style={{ height: "300px", width: "250px" }}
+              style={{ height: "50px", width: "250px" }}
             >
               <MyMembersProfile {...profile} />
             </div>

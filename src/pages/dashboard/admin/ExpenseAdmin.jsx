@@ -67,22 +67,37 @@ export default function ExpenseAdmin() {
 
     // Return statement
     return (
-      <div className="card h-50 text-center p-4">
-        <div className="card-body">
-          <p className="card-text lead fw-bold">{reportExpense.expenseFor}</p>
-          <p className="card-text lead fw-bold">{reportExpense.amount}</p>
-          <p className="card-text lead fw-bold">
-            {reportExpense.withdrawnFrom}
-          </p>
-          <p className="card-text lead fw-bold">
-            {reportExpense.accountNumber}
-          </p>
-          <p className="card-text lead fw-bold">{reportExpense.proofTrans}</p>
-          <button onClick={() => deleteReportExpense(reportExpense.expenseId)}>
-            DELETE
-          </button>
+      <>
+        <div className="flex flex-col m-5">
+          <table className="min-w-full divide-y divide-gray-200">
+            <tbody className="divide-y divide-gray-200 border border-blue-900">
+              <tr>
+                <td className="px-6 py-4 text-lg font-medium text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {reportExpense.expenseFor}
+                </td>
+                <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {reportExpense.amount}
+                </td>
+                <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {reportExpense.withdrawnFrom}
+                </td>
+                <td className="px-6 py-4 text-lg font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {reportExpense.accountNumber}
+                </td>
+                <td className="px-6 py-4 text-lg font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {reportExpense.proofTrans}
+                </td>
+                <button
+                  className="px-6 py-4 text-lg font-medium  text-red-900 text-center whitespace-nowrap border border-blue-900"
+                  onClick={() => deleteReportExpense(reportExpense.expenseId)}
+                >
+                  DELETE
+                </button>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div>
+      </>
     );
   }
 
@@ -93,7 +108,7 @@ export default function ExpenseAdmin() {
           <React.Fragment key={reportExpense.expenseId}>
             <div
               className="col-md-3 mb-4"
-              style={{ height: "300px", width: "250px" }}
+              style={{ height: "50px", width: "250px" }}
             >
               <MyReportExpense {...reportExpense} />
             </div>

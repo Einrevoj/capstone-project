@@ -110,17 +110,34 @@ export default function MemberListAdmin() {
 
     // Return statement
     return (
-      <div className="card h-50 text-center p-4">
-        <div className="card-body">
-          <p className="card-text lead fw-bold">{memberList.firstName}</p>
-          <p className="card-text lead fw-bold">{memberList.lastName}</p>
-          <p className="card-text lead fw-bold">{memberList.contactNumber}</p>
-          <p className="card-text lead fw-bold">{memberList.status}</p>
-          <button onClick={() => deleteMemberList(memberList.memberlistId)}>
-            DELETE
-          </button>
+      <>
+        <div className="flex flex-col m-5">
+          <table className="min-w-full divide-y divide-gray-200">
+            <tbody className="divide-y divide-gray-200 border border-blue-900">
+              <tr>
+                <td className="px-6 py-4 text-lg font-medium text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {memberList.firstName}
+                </td>
+                <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {memberList.lastName}
+                </td>
+                <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {memberList.contactNumber}
+                </td>
+                <td className="px-6 py-4 text-lg font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {memberList.status}
+                </td>
+                <button
+                  className="px-6 py-4 text-lg font-medium  text-red-900 text-center whitespace-nowrap border border-blue-900"
+                  onClick={() => deleteMemberList(memberList.memberlistId)}
+                >
+                  DELETE
+                </button>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div>
+      </>
     );
   }
 
@@ -131,7 +148,7 @@ export default function MemberListAdmin() {
           <React.Fragment key={memberList.memberlistId}>
             <div
               className="col-md-3 mb-4"
-              style={{ height: "300px", width: "250px" }}
+              style={{ height: "50px", width: "250px" }}
             >
               <MyMemberList {...memberList} />
             </div>
@@ -215,8 +232,10 @@ export default function MemberListAdmin() {
         </div>
       </Form>
       <hr />
-      <h4 className="text-danger">MEMBERLIST</h4>
-      <div className="row justify-content-center">{renderMemberList()}</div>
+      <h4 className="font-bold text-blue-900 text-2xl">MEMBERLIST</h4>
+      <div className="row justify-content-center container">
+        {renderMemberList()}
+      </div>
     </>
   );
 }

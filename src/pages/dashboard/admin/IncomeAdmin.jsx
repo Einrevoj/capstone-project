@@ -69,19 +69,40 @@ export default function IncomeAdmin() {
 
     // Return statement
     return (
-      <div className="card h-50 text-center p-4">
-        <div className="card-body">
-          <p className="card-text lead fw-bold">{reportIncome.incomeFrom}</p>
-          <p className="card-text lead fw-bold">{reportIncome.amount}</p>
-          <p className="card-text lead fw-bold">{reportIncome.depositTo}</p>
-          <p className="card-text lead fw-bold">{reportIncome.accountNumber}</p>
-          <p className="card-text lead fw-bold">{reportIncome.accountName}</p>
-          <p className="card-text lead fw-bold">{reportIncome.proofTrans}</p>
-          <button onClick={() => deleteReportIncome(reportIncome.incomeId)}>
-            DELETE
-          </button>
+      <>
+        <div className="flex flex-col m-5">
+          <table className="min-w-full divide-y divide-gray-200">
+            <tbody className="divide-y divide-gray-200 border border-blue-900">
+              <tr>
+                <td className="px-6 py-4 text-lg font-medium text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {reportIncome.incomeFrom}
+                </td>
+                <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {reportIncome.amount}
+                </td>
+                <td className="px-6 py-4 text-lg  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {reportIncome.depositTo}
+                </td>
+                <td className="px-6 py-4 text-lg font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {reportIncome.accountNumber}
+                </td>
+                <td className="px-6 py-4 text-lg font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {reportIncome.accountName}
+                </td>
+                <td className="px-6 py-4 text-lg font-medium  text-blue-900 text-center whitespace-nowrap border border-blue-900">
+                  {reportIncome.proofTrans}
+                </td>
+                <button
+                  className="px-6 py-4 text-lg font-medium  text-red-900 text-center whitespace-nowrap border border-blue-900"
+                  onClick={() => deleteReportIncome(reportIncome.incomeId)}
+                >
+                  DELETE
+                </button>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div>
+      </>
     );
   }
 
@@ -92,7 +113,7 @@ export default function IncomeAdmin() {
           <React.Fragment key={reportIncome.incomeId}>
             <div
               className="col-md-3 mb-4"
-              style={{ height: "300px", width: "250px" }}
+              style={{ height: "50px", width: "250px" }}
             >
               <MyReportIncome {...reportIncome} />
             </div>

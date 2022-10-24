@@ -68,9 +68,6 @@ export default function NavBar() {
                 <li className="hover:text-secondary">MEMBERSHIP</li>
               </Link>
               <li className="hover:text-secondary">INVESTMENT</li>
-              <Link to="admindashboard">
-                <li className="hover:text-secondary">ADMIN</li>
-              </Link>
               <a
                 href={
                   "https://drive.google.com/file/d/10qKwnSTdabrrN5bv46NSYde0ueQY9eLj/view?usp=sharing"
