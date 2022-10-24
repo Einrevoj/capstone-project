@@ -169,14 +169,6 @@ export default function MembersProfile() {
                 </div>
                 {/* End Input */}
               </div>
-              <div className="flex flex-col items-end pb-7 rounded-2xl">
-                <button class="group overflow-hidden mt-4 px-6 h-12 rounded-lg flex items-center bg-secondary hover:bg-orange-600 md:mt-0">
-                  <Icon className="text-2xl text-white" icon="fa-solid:edit" />
-                  <span class="font-sans font-medium text-xl text-white pl-1">
-                    Edit
-                  </span>
-                </button>
-              </div>
             </form>
           </div>
         </div>
@@ -186,14 +178,10 @@ export default function MembersProfile() {
 
   return (
     <>
-      <div id="members">
+      <div id="profile">
         <div className="container py-5">
           <div className="relative flex flex-wrap items-center justify-between px-2 py-3">
-            <div className="relative">
-              <h3 className="font-bold text-blue-900 text-2xl">
-                Members Profile
-              </h3>
-            </div>
+            <div className="relative"></div>
           </div>
           <div className="row py-4">{renderMembers()}</div>
         </div>
