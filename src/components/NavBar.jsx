@@ -68,7 +68,6 @@ export default function NavBar() {
                 <li className="hover:text-secondary">MEMBERSHIP</li>
               </Link>
 
-              <li className="hover:text-secondary">INVESTMENT</li>
               <a
                 href={
                   "https://drive.google.com/file/d/10qKwnSTdabrrN5bv46NSYde0ueQY9eLj/view?usp=sharing"
@@ -87,8 +86,6 @@ export default function NavBar() {
             <a href="#about">
               <li className="hover:text-secondary">ABOUT US</li>
             </a>
-
-            <li className="hover:text-secondary">INVESTMENT</li>
 
             <a
               href={
