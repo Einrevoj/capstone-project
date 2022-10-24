@@ -1,15 +1,18 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
 import hrImg from "../images/hr-mv.png";
 import logoImg from "../images/logo-white-orange.png";
-import { registerUser } from "../redux/actionUser";
+import { useDispatch } from "react-redux";
+import * as actionUser from "../redux/actionUser";
+import { auth } from "../firebase";
+import { bindActionCreators } from "redux";
 
 import AlreadyMemberBtn from "../components/utilities/AlreadyMemberBtn";
 
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [showModal, setShowModal] = useState(false);
 
   // Validation
@@ -17,11 +20,21 @@ export default function Register() {
   const [invalidEmail, setInvalidEmail] = useState(false);
   const [invalidPassword, setInvalidPassword] = useState(false);
 
+  const navigate = useNavigate();
+  const { registerUser } = bindActionCreators(actionUser, useDispatch());
+  const [user] = useAuthState(auth);
+
+  useEffect(() => {
+    if (user || localStorage.email) {
+      navigate("/");
+    }
+  });
+
   const checkIfValid = () => {
     let isValid = true;
 
     // Check if password is same with confirmPassword
-    if (password !== confirmPassword || !password) {
+    if (password !== !password) {
       setInvalidPassword(true);
       isValid = false;
     } else {
@@ -56,7 +69,6 @@ export default function Register() {
     setShowModal(false);
     setEmail("");
     setPassword("");
-    setConfirmPassword("");
   };
   return (
     // main container
@@ -120,23 +132,6 @@ export default function Register() {
               />
             </div>
 
-            {/* Confirm Password */}
-            <div className="flex flex-row justify-between items-center  mt-4 ">
-              <label
-                className="hidden font-sans font-regular text-white text-center md:flex md:text-3xl"
-                htmlFor="confirmPassword"
-              >
-                Confirm Password
-              </label>
-              <input
-                className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4 text-2xl pl-5"
-                type="password"
-                placeholder="Confirm Password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                isInvalid={invalidPassword}
-              />
-            </div>
             {/* Inputs Ends Here */}
             <div className="w-full flex flex-row justify-end space-x-5">
               <AlreadyMemberBtn />
