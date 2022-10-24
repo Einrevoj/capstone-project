@@ -18,7 +18,7 @@ export default function ProfileAdmin() {
     actionProfile,
     useDispatch()
   );
-  const members = useSelector((state) => state.members);
+  const profile = useSelector((state) => state.profile);
 
   useEffect(() => {
     getAllProfile();
@@ -40,7 +40,7 @@ export default function ProfileAdmin() {
     addProfile(body);
   };
 
-  function MyMembers(members) {
+  function MyMembersProfile(profile) {
     // Callback function
     const onDrop = useCallback((acceptedFiles) => {
       const file = acceptedFiles[0];
@@ -51,7 +51,7 @@ export default function ProfileAdmin() {
       // Upload to s3
       axios
         .put(
-          `https://vacportal.herokuapp.com/profile/${members.memberId}`,
+          `https://vacportal.herokuapp.com/profile/${profile.memberId}`,
           formData,
           {
             headers: {
@@ -75,14 +75,14 @@ export default function ProfileAdmin() {
     return (
       <div className="card h-50 text-center p-4">
         <div className="card-body">
-          <p className="card-text lead fw-bold">{members.email}</p>
-          <p className="card-text lead fw-bold">{members.birthday}</p>
-          <p className="card-text lead fw-bold">{members.contactNumber}</p>
-          <p className="card-text lead fw-bold">{members.address}</p>
-          <p className="card-text lead fw-bold">{members.occupation}</p>
-          <p className="card-text lead fw-bold">{members.employer}</p>
-          <p className="card-text lead fw-bold">{members.position}</p>
-          <button onClick={() => deleteProfile(members.memberId)}>
+          <p className="card-text lead fw-bold">{profile.email}</p>
+          <p className="card-text lead fw-bold">{profile.birthday}</p>
+          <p className="card-text lead fw-bold">{profile.contactNumber}</p>
+          <p className="card-text lead fw-bold">{profile.address}</p>
+          <p className="card-text lead fw-bold">{profile.occupation}</p>
+          <p className="card-text lead fw-bold">{profile.employer}</p>
+          <p className="card-text lead fw-bold">{profile.position}</p>
+          <button onClick={() => deleteProfile(profile.memberId)}>
             DELETE
           </button>
         </div>
@@ -90,16 +90,16 @@ export default function ProfileAdmin() {
     );
   }
 
-  const renderMembers = () => {
+  const renderMembersProfile = () => {
     return (
       <>
-        {members.map((members) => (
-          <React.Fragment key={members.memberId}>
+        {profile.map((profile) => (
+          <React.Fragment key={profile.memberId}>
             <div
               className="col-md-3 mb-4"
               style={{ height: "300px", width: "250px" }}
             >
-              <MyMembers {...members} />
+              <MyMembersProfile {...profile} />
             </div>
           </React.Fragment>
         ))}
@@ -199,7 +199,7 @@ export default function ProfileAdmin() {
       </Form>
       <hr />
       <h4 className="text-danger">MEMBERS PROFILE</h4>
-      <div className="row justify-content-center">{renderMembers()}</div>
+      <div className="row justify-content-center">{renderMembersProfile()}</div>
     </>
   );
 }

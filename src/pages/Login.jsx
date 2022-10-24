@@ -1,11 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import hrImg from "../images/hr-mv.png";
 import logoImg from "../images/logo-white-orange.png";
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from "../firebase";
 import NotYetMemberBtn from "../components/utilities/NotYetMemberBtn";
+import { bindActionCreators } from "redux";
+import { useDispatch } from "react-redux";
+import * as actionUser from "../redux/actionUser";
 import LoginAlt from "../components/utilities/LoginAlt";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  // Validation
+  const [invalidUser, setInvalidUser] = useState(false);
+
+  const navigate = useNavigate();
+  const { loginUser } = bindActionCreators(actionUser, useDispatch());
+  const [user] = useAuthState(auth);
+
+  useEffect(() => {
+    if (user || localStorage.email) {
+      // navigate home page
+      navigate("/");
+    }
+  }, [localStorage.email]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    loginUser({ email: email, password: password })
+      .then(() => {
+        localStorage.setItem("email", email);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+        setInvalidUser(true);
+      });
+  };
+
   return (
     // Fullpage Container
     <div className="w-full h-screen flex bg-gradient-to-br from-orange-300 to-orange-100">
@@ -44,25 +81,27 @@ export default function Login() {
             </h4>
 
             {/* INPUTS */}
-            <div className="flex flex-col items-end">
-              <input
-                className="w-full h-12 rounded-lg mt-5 placeholder:text-2xl placeholder:p-3"
-                type="text"
-                placeholder="Email Address"
-              />
-              <input
-                className="w-full h-12 rounded-lg mt-3 placeholder:text-2xl placeholder:p-3"
-                type="password"
-                placeholder="Password"
-              />
+            <form onSubmit={handleSubmit}>
+              <div className="flex flex-col items-end">
+                <input
+                  className="w-full h-12 rounded-lg mt-5 placeholder:text-2xl placeholder:p-3"
+                  type="text"
+                  placeholder="Email Address"
+                />
+                <input
+                  className="w-full h-12 rounded-lg mt-3 placeholder:text-2xl placeholder:p-3"
+                  type="password"
+                  placeholder="Password"
+                />
 
-              <button class="group overflow-hidden mt-4 px-6 h-12 rounded-lg flex items-center bg-secondary hover:bg-orange-600">
-                <Icon className="text-2xl text-white" icon="entypo:login" />
-                <span class="font-sans font-medium text-xl text-white pl-1">
-                  Login
-                </span>
-              </button>
-            </div>
+                <button class="group overflow-hidden mt-4 px-6 h-12 rounded-lg flex items-center bg-secondary hover:bg-orange-600">
+                  <Icon className="text-2xl text-white" icon="entypo:login" />
+                  <span class="font-sans font-medium text-xl text-white pl-1">
+                    Login
+                  </span>
+                </button>
+              </div>
+            </form>
             {/* End of INPUTS */}
             <LoginAlt />
             {/* Not Yet Member? */}

@@ -7,7 +7,7 @@ import * as actionProfile from "../../../redux/actionProfile";
 import { bindActionCreators } from "redux";
 import { useDispatch } from "react-redux";
 
-export default function Members() {
+export default function MembersProfile() {
   const [members, setMembers] = useState([]);
   const { getAllProfile } = bindActionCreators(actionProfile, useDispatch());
   const navigate = useNavigate();
