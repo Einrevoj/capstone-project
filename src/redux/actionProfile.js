@@ -1,12 +1,12 @@
 import {put, get, deleteMethod} from '../components/utilities/https';
 
-export const getAllReportIncome = () => {
-    const url = '/report-income/getAll';
+export const getAllProfile = () => {
+    const url = '/profile/getAll';
     return new Promise((resolve, reject) => {
         const promise = get(url);
         promise.then((response) => {
             resolve({
-                type: 'SAVE_INCOME',
+                type: 'SAVE_PROFILE',
                 payload: response
             })
         }).catch((error) => {
@@ -15,13 +15,13 @@ export const getAllReportIncome = () => {
     })
 }
 
-export const getReportIncome = (incomeId) => {
-    const url = `/report-income/getById/${incomeId}`;
+export const getProfile = (memberId) => {
+    const url = `/profile/getById/${memberId}`;
     return new Promise((resolve, reject) => {
         const promise = get(url);
         promise.then((response) => {
             resolve({
-                type: 'GET_ACTIVE_INCOME',
+                type: 'GET_ACTIVE_PROFILE',
                 payload: response
             })
         }).catch((error) => {
@@ -31,13 +31,13 @@ export const getReportIncome = (incomeId) => {
 }
 
 
-export const addReportIncome = (body) => {
-    const url = '/report-income/add';
+export const addProfile = (body) => {
+    const url = '/profile/add';
     return new Promise((resolve, reject) => {
         const promise = put(url, body);
         promise.then((response) => {
             resolve({
-                type: 'SAVE_INCOME',
+                type: 'SAVE_PROFILE',
                 payload: response
             })
         }).catch((error) => {
@@ -46,13 +46,13 @@ export const addReportIncome = (body) => {
     })
 }
 
-export const deleteReportIncome = (incomeId) => {
-    const url = `/report-income/delete/${incomeId}`;
+export const deleteProfile = (memberId) => {
+    const url = `/profile/delete/${memberId}`;
     return new Promise((resolve, reject) => {
         const promise = deleteMethod(url);
         promise.then((response) => {
             resolve({
-                type: 'SAVE_INCOME',
+                type: 'SAVE_PROFILE',
                 payload: response
             })
         }).catch((error) => {

@@ -10,6 +10,7 @@ import memberListReducer from "./memberListReducer";
 import incomeReducer from "./incomeReducer";
 import expenseReducer from "./expenseReducer";
 import investmentReducer from "./investmentReducer";
+import profileReducer from "./profileReducer";
 
 export const store = configureStore({
     reducer: {
@@ -18,6 +19,7 @@ export const store = configureStore({
         reportIncome: incomeReducer,
         reportExpense: expenseReducer,
         investment: investmentReducer,
+        profile: profileReducer,
 
 
 

@@ -7,7 +7,7 @@ import axios from "axios";
 import { useDropzone } from "react-dropzone";
 
 export default function ExpenseAdmin() {
-  const [expenseFrom, setExpenseFrom] = useState("");
+  const [expenseFor, setExpenseFor] = useState("");
   const [amount, setAmount] = useState("");
   const [withdrawnFrom, setWithdrawnFrom] = useState("");
   const [accountNumber, setAccountNumber] = useState("");
@@ -24,7 +24,7 @@ export default function ExpenseAdmin() {
     e.preventDefault();
 
     const body = {
-      expenseFrom: expenseFrom,
+      expenseFor: expenseFor,
       amount: amount,
       withdrawnFrom: withdrawnFrom,
       accountNumber: accountNumber,
@@ -45,7 +45,7 @@ export default function ExpenseAdmin() {
       // Upload to s3
       axios
         .put(
-          `https://capstone-vac.herokuapp.com/reportexpense/${reportExpense.expenseId}`,
+          `https://vacportal.herokuapp.com/reportexpense/${reportExpense.expenseId}`,
           formData,
           {
             headers: {
@@ -69,7 +69,7 @@ export default function ExpenseAdmin() {
     return (
       <div className="card h-50 text-center p-4">
         <div className="card-body">
-          <p className="card-text lead fw-bold">{reportExpense.incomeFrom}</p>
+          <p className="card-text lead fw-bold">{reportExpense.expenseFor}</p>
           <p className="card-text lead fw-bold">{reportExpense.amount}</p>
           <p className="card-text lead fw-bold">
             {reportExpense.withdrawnFrom}
@@ -78,7 +78,7 @@ export default function ExpenseAdmin() {
             {reportExpense.accountNumber}
           </p>
           <p className="card-text lead fw-bold">{reportExpense.proofTrans}</p>
-          <button onClick={() => deleteReportIncome(reportExpense.expenseId)}>
+          <button onClick={() => deleteReportExpense(reportExpense.expenseId)}>
             DELETE
           </button>
         </div>
@@ -113,11 +113,11 @@ export default function ExpenseAdmin() {
             type="text"
             size="sm"
             placeholder="Enter ExpenseFrom"
-            value={expenseFrom}
-            onChange={(e) => setExpenseFrom(e.target.value)}
+            value={expenseFor}
+            onChange={(e) => setExpenseFor(e.target.value)}
           ></Form.Control>
           <Form.Control.Feedback type="invalid">
-            Please input a expenseFrom
+            Please input a expenseFor
           </Form.Control.Feedback>
         </Form.Group>
 

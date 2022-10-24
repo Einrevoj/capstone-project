@@ -1,12 +1,12 @@
 const initialState = [];
 
-const expenseReducer= (state = initialState, action) => {
+const profileReducer = (state = initialState, action) => {
     switch(action.type) {
-        case 'SAVE_EXPENSE':
+        case 'SAVE_PROFILE':
             return state = action.payload;
         default:
             return state;
     }
 }
 
-export default expenseReducer;
+export default profileReducer;

@@ -99,7 +99,7 @@ export default function ReportIncome() {
 
   return (
     <>
-      <div id="reportincome">
+      <div id="reportIncome">
         <div className="container py-5">
           <div className="relative flex flex-wrap items-center justify-between px-2 py-3">
             <div className="relative">

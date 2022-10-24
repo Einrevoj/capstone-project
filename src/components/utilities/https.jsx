@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const APIServicePath = "https://capstone-vac.herokuapp.com";
+const APIServicePath = "https://vacportal.herokuapp.com";
 
 function getInstance(url) {
   return axios.create({

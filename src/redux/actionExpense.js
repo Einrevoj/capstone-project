@@ -1,12 +1,12 @@
 import {put, get, deleteMethod} from '../components/utilities/https';
 
 export const getAllReportExpense = () => {
-    const url = '/reportexpense/getAll';
+    const url = '/report-expense/getAll';
     return new Promise((resolve, reject) => {
         const promise = get(url);
         promise.then((response) => {
             resolve({
-                type: 'SAVE_REPORTEXPENSE',
+                type: 'SAVE_EXPENSE',
                 payload: response
             })
         }).catch((error) => {
@@ -16,12 +16,12 @@ export const getAllReportExpense = () => {
 }
 
 export const getReportExpense = (expenseId) => {
-    const url = `/reportexpense/getById/${expenseId}`;
+    const url = `/report-expense/getById/${expenseId}`;
     return new Promise((resolve, reject) => {
         const promise = get(url);
         promise.then((response) => {
             resolve({
-                type: 'GET_ACTIVE_REPORTEXPENSE',
+                type: 'GET_ACTIVE_EXPENSE',
                 payload: response
             })
         }).catch((error) => {
@@ -32,12 +32,12 @@ export const getReportExpense = (expenseId) => {
 
 
 export const addReportExpense = (body) => {
-    const url = '/reportexpense/add';
+    const url = '/report-expense/add';
     return new Promise((resolve, reject) => {
         const promise = put(url, body);
         promise.then((response) => {
             resolve({
-                type: 'SAVE_REPORTEXPENSE',
+                type: 'SAVE_EXPENSE',
                 payload: response
             })
         }).catch((error) => {
@@ -47,12 +47,12 @@ export const addReportExpense = (body) => {
 }
 
 export const deleteReportExpense = (expenseId) => {
-    const url = `/reportexpense/delete/${expenseId}`;
+    const url = `/report-expense/delete/${expenseId}`;
     return new Promise((resolve, reject) => {
         const promise = deleteMethod(url);
         promise.then((response) => {
             resolve({
-                type: 'SAVE_REPORTEXPENSE',
+                type: 'SAVE_EXPENSE',
                 payload: response
             })
         }).catch((error) => {

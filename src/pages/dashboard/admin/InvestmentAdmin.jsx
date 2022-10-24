@@ -8,7 +8,7 @@ import { useDropzone } from "react-dropzone";
 
 export default function InvestmentAdmin() {
   const [investmentTo, setInvestmentTo] = useState("");
-  const [platFormUsed, setPlatFormUsed] = useState("");
+  const [platformUsed, setPlatformUsed] = useState("");
   const [withdrawnFrom, setWithdrawnFrom] = useState("");
   const [amount, setAmount] = useState("");
   const [proofTrans, setProofTrans] = useState("");
@@ -25,7 +25,7 @@ export default function InvestmentAdmin() {
 
     const body = {
       investmentTo: investmentTo,
-      platFormUsed: platFormUsed,
+      platformUsed: platformUsed,
       withdrawnFrom: withdrawnFrom,
       amount: amount,
       proofTrans: proofTrans,
@@ -45,7 +45,7 @@ export default function InvestmentAdmin() {
       // Upload to s3
       axios
         .put(
-          `https://capstone-vac.herokuapp.com/investment/${investment.investmentId}`,
+          `https://vacportal.herokuapp.com/investment/${investment.investmentId}`,
           formData,
           {
             headers: {
@@ -70,11 +70,11 @@ export default function InvestmentAdmin() {
       <div className="card h-50 text-center p-4">
         <div className="card-body">
           <p className="card-text lead fw-bold">{investment.investmentTo}</p>
-          <p className="card-text lead fw-bold">{investment.platFormUsed}</p>
+          <p className="card-text lead fw-bold">{investment.platformUsed}</p>
           <p className="card-text lead fw-bold">{investment.withdrawnFrom}</p>
           <p className="card-text lead fw-bold">{investment.amount}</p>
           <p className="card-text lead fw-bold">{investment.proofTrans}</p>
-          <button onClick={() => deleteReportIncome(investment.expenseId)}>
+          <button onClick={() => deleteInvestment(investment.investmentId)}>
             DELETE
           </button>
         </div>
@@ -123,8 +123,8 @@ export default function InvestmentAdmin() {
             type="text"
             size="sm"
             placeholder="Enter platFormUsed"
-            value={platFormUsed}
-            onChange={(e) => setPlatFormUsed(e.target.value)}
+            value={platformUsed}
+            onChange={(e) => setPlatformUsed(e.target.value)}
           ></Form.Control>
           <Form.Control.Feedback type="invalid">
             Please input platFormUsed

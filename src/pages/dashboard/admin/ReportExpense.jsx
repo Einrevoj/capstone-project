@@ -31,7 +31,7 @@ export default function ReportExpense() {
           <input
             className="border border-primary rounded-lg md:w-2/3 h-9 placeholder:pl-4 text-right pr-5"
             type="text"
-            placeholder={reportExpense.expenseFrom}
+            placeholder={reportExpense.expenseFor}
           />
         </div>
         {/* End Input */}

@@ -4,6 +4,7 @@ import ExpenseAdmin from "./ExpenseAdmin";
 import IncomeAdmin from "./IncomeAdmin";
 import InvestmentAdmin from "./InvestmentAdmin";
 import MemberListAdmin from "./MemberListAdmin";
+// import ProfileAdmin from "./ProfileAdmin";
 
 export default function Admin() {
   const navigate = useNavigate();
@@ -26,6 +27,7 @@ export default function Admin() {
         <br />
         <br />
         <h3>Profile</h3>
+        {/* <ProfileAdmin /> */}
         <br />
         <br />
         <h3>Transaction</h3>
