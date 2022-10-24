@@ -88,7 +88,7 @@ export default function MemberListAdmin() {
       // Upload to s3
       axios
         .put(
-          `https://vacportal.herokuapp.com/memberlist/${memberList.memberlistId}`,
+          `https://mikezgarcia.com/memberlist/${memberList.memberlistId}`,
           formData,
           {
             headers: {
