@@ -20,96 +20,24 @@ export default function ProfileAdmin() {
   );
   const members = useSelector((state) => state.members);
 
-  // Validation
-  const [invalidEmail, setInvalidEmail] = useState(false);
-  const [invalidContactNumber, setInvalidContactNumber] = useState(false);
-  const [invalidBirthday, setInvalidBirthday] = useState(false);
-  const [invalidAddress, setInvalidAddress] = useState(false);
-  const [invalidOccupation, setInvalidOccupation] = useState(false);
-  const [invalidEmployer, setInvalidEmployer] = useSelector(false);
-  const [invalidPosition, setInvalidPosition] = useState(false);
-
   useEffect(() => {
     getAllProfile();
   }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (checkIfValid()) {
-      const body = {
-        email: email,
-        contactNumber: contactNumber,
-        birthday: birthday,
-        address: address,
-        occupation: occupation,
-        employer: employer,
-        position: position,
-      };
 
-      addProfile(body);
-    }
-  };
+    const body = {
+      email: email,
+      contactNumber: contactNumber,
+      birthday: birthday,
+      address: address,
+      occupation: occupation,
+      employer: employer,
+      position: position,
+    };
 
-  const checkIfValid = () => {
-    let isValid = true;
-
-    // Check if email is valid
-    if (email.match("^$|^.*@.*..*$")) {
-      setInvalidEmail(true);
-      isValid = false;
-    } else {
-      setInvalidEmail(false);
-    }
-
-    // Check if birthday is valid
-    if (birthday.match("^$|^.*@.*..*$")) {
-      setInvalidBirthday(true);
-      isValid = false;
-    } else {
-      setInvalidBirthday(false);
-    }
-
-    // Check if contactNumber is valid
-    if (contactNumber.match("^$|^.*@.*..*$")) {
-      setInvalidContactNumber(true);
-      isValid = false;
-    } else {
-      setInvalidContactNumber(false);
-    }
-
-    // Check if address is valid
-    if (address.match("^$|^.*@.*..*$")) {
-      setInvalidAddress(true);
-      isValid = false;
-    } else {
-      setInvalidAddress(false);
-    }
-
-    // Check if occupation is valid
-    if (occupation.match("^$|^.*@.*..*$")) {
-      setInvalidOccupation(true);
-      isValid = false;
-    } else {
-      setInvalidOccupation(false);
-    }
-
-    // Check if employer is valid
-    if (employer.match("^$|^.*@.*..*$")) {
-      setInvalidEmployer(true);
-      isValid = false;
-    } else {
-      setInvalidEmployer(false);
-    }
-
-    // Check if position is valid
-    if (position.match("^$|^.*@.*..*$")) {
-      setInvalidPosition(true);
-      isValid = false;
-    } else {
-      setInvalidPosition(false);
-    }
-
-    return isValid;
+    addProfile(body);
   };
 
   function MyMembers(members) {
@@ -191,11 +119,7 @@ export default function ProfileAdmin() {
             placeholder="Enter Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            isInvalid={invalidEmail}
           ></Form.Control>
-          <Form.Control.Feedback type="invalid">
-            Please input a first name
-          </Form.Control.Feedback>
         </Form.Group>
 
         {/* Birthday */}
@@ -206,11 +130,7 @@ export default function ProfileAdmin() {
             placeholder="Enter birthday"
             value={birthday}
             onChange={(e) => setBirthday(e.target.value)}
-            isInvalid={invalidBirthday}
           ></Form.Control>
-          <Form.Control.Feedback type="invalid">
-            Please input a Birthday
-          </Form.Control.Feedback>
         </Form.Group>
 
         {/* Contact number */}
@@ -221,11 +141,7 @@ export default function ProfileAdmin() {
             placeholder="Enter Contact Number"
             value={contactNumber}
             onChange={(e) => setContactNumber(e.target.value)}
-            isInvalid={invalidContactNumber}
           ></Form.Control>
-          <Form.Control.Feedback type="invalid">
-            Please input a contact number
-          </Form.Control.Feedback>
         </Form.Group>
 
         {/* Address */}
@@ -236,11 +152,7 @@ export default function ProfileAdmin() {
             placeholder="Enter Address"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
-            isInvalid={invalidAddress}
           ></Form.Control>
-          <Form.Control.Feedback type="invalid">
-            Please input Address
-          </Form.Control.Feedback>
         </Form.Group>
 
         {/* Occupation */}
@@ -251,11 +163,7 @@ export default function ProfileAdmin() {
             placeholder="Enter Occupation"
             value={occupation}
             onChange={(e) => setOccupation(e.target.value)}
-            isInvalid={invalidOccupation}
           ></Form.Control>
-          <Form.Control.Feedback type="invalid">
-            Please input Occupation
-          </Form.Control.Feedback>
         </Form.Group>
 
         {/* Employer */}
@@ -266,11 +174,7 @@ export default function ProfileAdmin() {
             placeholder="Enter Employer"
             value={employer}
             onChange={(e) => setEmployer(e.target.value)}
-            isInvalid={invalidEmployer}
           ></Form.Control>
-          <Form.Control.Feedback type="invalid">
-            Please input employer
-          </Form.Control.Feedback>
         </Form.Group>
 
         {/* Position */}
@@ -281,11 +185,7 @@ export default function ProfileAdmin() {
             placeholder="Enter Position"
             value={position}
             onChange={(e) => setPosition(e.target.value)}
-            isInvalid={invalidPosition}
           ></Form.Control>
-          <Form.Control.Feedback type="invalid">
-            Please input Position
-          </Form.Control.Feedback>
         </Form.Group>
 
         <div className="col-12 d-flex flex-wrap justify-content-center">

@@ -164,7 +164,7 @@ export default function Members() {
                   <input
                     className="border border-primary rounded-lg md:w-2/3 h-9 placeholder:pl-4"
                     type="text"
-                    placeholder={members.postion}
+                    placeholder={members.position}
                   />
                 </div>
                 {/* End Input */}
