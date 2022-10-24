@@ -9,15 +9,15 @@ import ProfileAdmin from "./ProfileAdmin";
 export default function Admin() {
   const navigate = useNavigate();
 
-  //   useEffect(() => {
-  //     if (localStorage.email !== "admin@admin.com") {
-  //       navigate("/");
-  //     }
-  //   }, [navigate]);
-
+  // useEffect(() => {
   //   if (localStorage.email !== "admin@admin.com") {
-  //     return;
+  //     navigate("/");
   //   }
+  // }, [navigate]);
+
+  // if (localStorage.email !== "admin@admin.com") {
+  //   return;
+  // }
 
   return (
     <div className="admin">

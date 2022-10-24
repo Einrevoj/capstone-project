@@ -67,6 +67,9 @@ export default function NavBar() {
               <Link to="/memberdashboard">
                 <li className="hover:text-secondary">MEMBERSHIP</li>
               </Link>
+              <Link to="/admin">
+                <li className="hover:text-secondary">ADMIN</li>
+              </Link>
               <li className="hover:text-secondary">INVESTMENT</li>
               <a
                 href={
