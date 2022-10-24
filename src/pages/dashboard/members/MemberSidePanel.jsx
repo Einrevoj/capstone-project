@@ -70,6 +70,22 @@ export default function SidePanel() {
               />
               <h2 className="sidebar-txt">Wallet</h2>
             </button>
+            {/* Activities */}
+            {/* <button className="sidebar-btn">
+              <Icon
+                className="sidebar-icon text-[50px]"
+                icon="mdi:calendar-clock"
+              />
+              <h2 className="sidebar-txt">Activities</h2>
+            </button> */}
+            {/* Downloadable Forms */}
+            {/* <button className="sidebar-btn">
+              <Icon
+                className="sidebar-icon text-[60px]"
+                icon="fluent:document-arrow-down-20-filled"
+              />
+              <h2 className="sidebar-txt">Forms</h2>
+            </button> */}
           </div>
         </div>
       )}
